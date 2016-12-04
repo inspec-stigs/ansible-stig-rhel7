@@ -1,0 +1,28 @@
+---
+# STIG: RHEL-07-040020 - The system must log informational authentication data.
+# description: Access services, such as those providing remote access to network devices and information systems, that lack automated monitoring capabilities increase risk and make remote user access management difficult at best.  Automated monitoring of access sessions allows organizations to detect cyber attacks and also ensure ongoing compliance with remote access policies by auditing connection activities of remote access capabilities, such as Remote Desktop Protocol (RDP), on a variety of information system components (e.g., servers, workstations, notebook computers, smartphones, and tablets).
+# severity: 'medium'
+# checkid: 'C-RHEL-07-040020_chk'
+# fixid: 'F-RHEL-07-040020_fix'
+# version: 'RHEL-07-040020'
+# ruleid: 'RHEL-07-040020_rule'
+# fixtext: 'Configure the operating system to log informational authentication data.
+#
+#Add the following rules to the /etc/rsyslog.conf file:
+#
+#auth.*,authpriv.* /var/log/auth.log
+#daemon.notice /var/log/messages'
+# checktext: 'Verify the operating system logs informational authentication data.
+#
+#Check to see if rsyslog is logging authentication information with the following commands:
+#
+## grep auth* /etc/rsyslog.conf
+#auth,authpriv.debug /var/log/auth.log
+#
+## grep daemon.* /etc/rsyslog.conf
+#daemon.notice /var/log/messages
+#
+#If the auth, authpriv, and daemon facilities are not being logged, or they are being logged at a priority of notice or higher, this is a finding.'
+
+- debug: msg="rhel_07_040020 not implemented"
+

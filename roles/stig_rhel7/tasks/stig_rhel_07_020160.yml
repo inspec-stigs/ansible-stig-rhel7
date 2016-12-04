@@ -1,0 +1,31 @@
+---
+# STIG: RHEL-07-020160 - USB mass storage must be disabled.
+# description: USB mass storage permits easy introduction of unknown devices, thereby facilitating malicious activity.  Satisfies: SRG-OS-000114-GPOS-00059, SRG-OS-000378-GPOS-00163, SRG-OS-000480-GPOS-00227
+# severity: 'medium'
+# checkid: 'C-RHEL-07-020160_chk'
+# fixid: 'F-RHEL-07-020160_fix'
+# version: 'RHEL-07-020160'
+# ruleid: 'RHEL-07-020160_rule'
+# fixtext: 'Configure the operating system to disable the ability to use USB mass storage devices.
+#
+#Create a file under /etc/modprobe.d with the following command:
+#
+##touch /etc/modprobe.d/nousbstorage
+#
+#Add the following line to the created file:
+#
+#install usb-storage /bin/true'
+# checktext: 'If there is an HBSS with a Device Control Module and a Data Loss Prevention mechanism, this requirement is not applicable.
+#
+#Verify the operating system disables the ability to use USB mass storage devices.
+#
+#Check to see if USB mass storage is disabled with the following command:
+#
+##grep -i usb-storage /etc/modprobe.d/*
+#
+#install usb-storage /bin/true
+#
+#If the command does not return any output, and use of USB storage devices is not documented with the Information System Security Officer (ISSO) as an operational requirement, this is a finding.'
+
+- debug: msg="rhel_07_020160 not implemented"
+

@@ -1,0 +1,25 @@
+---
+# STIG: RHEL-07-010373 - If three unsuccessful root logon attempts within 15 minutes occur the associated account must be locked.
+# description: By limiting the number of failed logon attempts, the risk of unauthorized system access via user password guessing, otherwise known as brute-forcing, is reduced. Limits are imposed by locking the account.  Satisfies: SRG-OS-000329-GPOS-00128, SRG-OS-000021-GPOS-00005
+# severity: 'medium'
+# checkid: 'C-RHEL-07-010373_chk'
+# fixid: 'F-RHEL-07-010373_fix'
+# version: 'RHEL-07-010373'
+# ruleid: 'RHEL-07-010373_rule'
+# fixtext: 'Configure the operating system to automatically lock the root account until the locked is released by an administrator when three unsuccessful logon attempts in 15 minutes are made.
+#
+#Modify the first three lines of the auth section of the /etc/pam.d/system-auth and /etc/pam.d/password-auth files to match the following lines:
+#
+#auth        required       pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900 unlock_time=604800
+#auth        sufficient     pam_unix.so try_first_pass
+#auth        [default=die]  pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=604800'
+# checktext: 'Verify the operating system automatically locks the root account until it is released by an administrator when three unsuccessful logon attempts in 15 minutes are made.
+#
+## grep pam_faillock.so /etc/pam.d/password-auth
+#auth        required       pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900
+#auth        [default=die]  pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900
+#
+#If the “even_deny_root” setting is not defined on both lines with the pam_faillock.so module name, this is a finding.'
+
+- debug: msg="rhel_07_010373 not implemented"
+

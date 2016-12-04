@@ -1,0 +1,28 @@
+---
+# STIG: RHEL-07-040650 - The SSH private host key files must have mode 0600 or less permissive.
+# description: If an unauthorized user obtains the private SSH host key file, the host could be impersonated.
+# severity: 'medium'
+# checkid: 'C-RHEL-07-040650_chk'
+# fixid: 'F-RHEL-07-040650_fix'
+# version: 'RHEL-07-040650'
+# ruleid: 'RHEL-07-040650_rule'
+# fixtext: 'Configure the mode of SSH private host key files under “/etc/ssh” to “0600” with the following command:
+#
+## chmod 0600 /etc/ssh/ssh_host*key'
+# checktext: 'Verify the SSH private host key files have mode “0600” or less permissive.
+#
+#The following command will find all SSH private key files on the system:
+#
+## find / -name \'*ssh_host*key\'
+#
+#Check the mode of the private host key files under /etc/ssh file with the following command:
+#
+## ls -lL /etc/ssh/*key
+#-rw-------  1 root  wheel  668 Nov 28 06:43 ssh_host_dsa_key
+#-rw-------  1 root  wheel  582 Nov 28 06:43 ssh_host_key
+#-rw-------  1 root  wheel  887 Nov 28 06:43 ssh_host_rsa_key
+#
+#If any file has a mode more permissive than “0600”, this is a finding.'
+
+- debug: msg="rhel_07_040650 not implemented"
+

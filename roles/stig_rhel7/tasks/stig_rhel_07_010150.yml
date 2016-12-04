@@ -1,0 +1,24 @@
+---
+# STIG: RHEL-07-010150 - When passwords are changed the number of repeating consecutive characters must not be more than four characters.
+# description: Use of a complex password helps to increase the time and resources required to compromise the password. Password complexity, or strength, is a measure of the effectiveness of a password in resisting attempts at guessing and brute-force attacks.  Password complexity is one factor of several that determines how long it takes to crack a password. The more complex the password, the greater the number of possible combinations that need to be tested before the password is compromised.
+# severity: 'medium'
+# checkid: 'C-RHEL-07-010150_chk'
+# fixid: 'F-RHEL-07-010150_fix'
+# version: 'RHEL-07-010150'
+# ruleid: 'RHEL-07-010150_rule'
+# fixtext: 'Configure the operating system to require the change of the number of repeating consecutive characters when passwords are changed by setting the “maxrepeat” option.
+#
+#Add the following line to /etc/security/pwquality.conf conf (or modify the line to have the required value):
+#
+#maxrepeat = 2'
+# checktext: 'The "maxrepeat" option sets the maximum number of allowed same consecutive characters in a new password.
+#
+#Check for the value of the “maxrepeat” option in /etc/security/pwquality.conf with the following command:
+#
+## grep maxrepeat /etc/security/pwquality.conf 
+#maxrepeat = 2
+#
+#If the value of “maxrepeat” is set to more than 2, this is a finding.'
+
+- debug: msg="rhel_07_010150 not implemented"
+

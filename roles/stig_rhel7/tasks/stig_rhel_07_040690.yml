@@ -1,0 +1,22 @@
+---
+# STIG: RHEL-07-040690 - The SSH daemon must use privilege separation.
+# description: SSH daemon privilege separation causes the SSH process to drop root privileges when not needed, which would decrease the impact of software vulnerabilities in the unprivileged section.
+# severity: 'medium'
+# checkid: 'C-RHEL-07-040690_chk'
+# fixid: 'F-RHEL-07-040690_fix'
+# version: 'RHEL-07-040690'
+# ruleid: 'RHEL-07-040690_rule'
+# fixtext: 'Uncomment the “UsePrivilegeSeparation” keyword in /etc/ssh/sshd_config (this file may be named differently or be in a different location if using a version of SSH that is provided by a third-party vendor) and set the value to "yes":
+#
+#UsePrivilegeSeparation yes'
+# checktext: 'Verify the SSH daemon performs privilege separation.
+#
+#Check that the SSH daemon performs privilege separation with the following command:
+#
+## grep -i usepriv /etc/ssh/sshd_config
+#UsePrivilegeSeparation yes
+#
+#If the “UsePrivilegeSeparation” keyword is set to "no", is missing, or the retuned line is commented out, this is a finding.'
+
+- debug: msg="rhel_07_040690 not implemented"
+

@@ -1,0 +1,26 @@
+---
+# STIG: RHEL-07-020210 - The operating system must enable SELinux.
+# description: Without verification of the security functions, security functions may not operate correctly and the failure may go unnoticed. Security function is defined as the hardware, software, and/or firmware of the information system responsible for enforcing the system security policy and supporting the isolation of code and data on which the protection is based. Security functionality includes, but is not limited to, establishing system accounts, configuring access authorizations (i.e., permissions, privileges), setting events to be audited, and setting intrusion detection parameters.  This requirement applies to operating systems performing security function verification/testing and/or systems and environments that require this functionality.
+# severity: 'high'
+# checkid: 'C-RHEL-07-020210_chk'
+# fixid: 'F-RHEL-07-020210_fix'
+# version: 'RHEL-07-020210'
+# ruleid: 'RHEL-07-020210_rule'
+# fixtext: 'Configure the operating system to verify correct operation of all security functions.
+#
+#Set the “Selinux” status and the “enforcing” mode by modifying the /etc/selinux/config file to have the following line:
+#
+#SELINUX=enforcing
+#
+#A reboot is required for the changes to take effect.'
+# checktext: 'Verify the operating system verifies correct operation of all security functions.
+#
+#Check if SELinux is active and in enforcing mode with the following command:
+#
+## getenforce
+#Enforcing
+#
+#If the “SELinux” mode is not set to “Enforcing”, this is a finding.'
+
+- debug: msg="rhel_07_020210 not implemented"
+

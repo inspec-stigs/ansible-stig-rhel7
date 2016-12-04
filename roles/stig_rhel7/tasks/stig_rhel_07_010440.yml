@@ -1,0 +1,24 @@
+---
+# STIG: RHEL-07-010440 - The operating system must not allow empty passwords for SSH logon to the system.
+# description: Failure to restrict system access to authenticated users negatively impacts operating system security.
+# severity: 'high'
+# checkid: 'C-RHEL-07-010440_chk'
+# fixid: 'F-RHEL-07-010440_fix'
+# version: 'RHEL-07-010440'
+# ruleid: 'RHEL-07-010440_rule'
+# fixtext: 'Configure the operating system to not allow empty passwords for SSH logon to the system.
+#
+#Edit the /etc/ssh/sshd_config file to uncomment or add the line for “PermitEmptyPasswords” keyword and set the value to “no”:
+#
+#PermitEmptyPasswords no'
+# checktext: 'Verify the operating system does not allow empty passwords to be used for SSH logon to the system.
+#
+#Check for the value of the PermitEmptyPasswords keyword with the following command:
+#
+## grep -i permitemptypassword /etc/ssh/sshd_config
+#PermitEmptyPasswords no
+#
+#If the “PermitEmptyPasswords” keyword is not set to “no”, is missing, or is commented out, this is a finding.'
+
+- debug: msg="rhel_07_010440 not implemented"
+

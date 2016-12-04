@@ -1,0 +1,9 @@
+---
+- name: rhel7 stig
+  hosts: all
+  any_errors_fatal: true
+  roles:
+    - role: 'stig_rhel7'
+      tags: ['stig','stig_rhel7']
+      when: ansible_distribution in ['RedHat','CentOS'] and
+            ansible_distribution_version | match("^7\.")

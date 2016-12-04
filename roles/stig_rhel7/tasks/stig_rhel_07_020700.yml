@@ -1,0 +1,28 @@
+---
+# STIG: RHEL-07-020700 - All files and directories contained in local interactive user home directories must have mode 0750 or less permissive.
+# description: If a local interactive user files have excessive permissions, unintended users may be able to access or modify them.
+# severity: 'medium'
+# checkid: 'C-RHEL-07-020700_chk'
+# fixid: 'F-RHEL-07-020700_fix'
+# version: 'RHEL-07-020700'
+# ruleid: 'RHEL-07-020700_rule'
+# fixtext: 'Set the mode on files and directories in the local interactive user home directory with the following command:
+#
+## chmod 0750  /<home directory>/<users home directory>/<file>'
+# checktext: 'Verify all files and directories contained in a local interactive user home directory, excluding local initialization files, have a mode of “0750”.
+#
+#Check the mode of all non-initialization files in a local interactive user home directory with the following command:
+#
+#Files that begin with a “.” are excluded from this requirement.
+#
+#Note: The example will be for the user “smithj”, who has a home directory of “/home/smithj/home/smithj”
+#
+## ls -lLR /<home directory>/<users home directory>/
+#-rwxr-x--- 1 smithj smithj  18 Mar  5 17:06 file1
+#-rwxr----- 1 smithj smithj 193 Mar  5 17:06 file2
+#-rw-r-x--- 1 smithj sa        231 Mar  5 17:06 file3
+#
+#If any files are found with a mode more permissive than “0750”, this is a finding.'
+
+- debug: msg="rhel_07_020700 not implemented"
+

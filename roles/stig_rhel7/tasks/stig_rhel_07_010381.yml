@@ -1,0 +1,23 @@
+---
+# STIG: RHEL-07-010381 - Users must re-authenticate for privilege escalation.
+# description: Without re-authentication, users may access resources or perform tasks for which they do not have authorization.   When operating systems provide the capability to escalate a functional capability, it is critical the user reauthenticate.  Satisfies: SRG-OS-000373-GPOS-00156, SRG-OS-000373-GPOS-00157, SRG-OS-000373-GPOS-00158
+# severity: 'medium'
+# checkid: 'C-RHEL-07-010381_chk'
+# fixid: 'F-RHEL-07-010381_fix'
+# version: 'RHEL-07-010381'
+# ruleid: 'RHEL-07-010381_rule'
+# fixtext: 'Configure the operating system to require users to reauthenticate for privilege escalation.
+#
+#Check the configuration of the /etc/sudoers and /etc/sudoers.d/* files with the following command:
+#
+#Remove any occurrences of "!authenticate" tags in the file.'
+# checktext: 'Verify the operating system requires users to reauthenticate for privilege escalation.
+#
+#Check the configuration of the /etc/sudoers and /etc/sudoers.d/* files with the following command:
+#
+## grep -i authenticate /etc/sudoers /etc/sudoers.d/*
+#
+#If any line is found with a "!authenticate" tag, this is a finding.'
+
+- debug: msg="rhel_07_010381 not implemented"
+

@@ -1,0 +1,29 @@
+---
+# STIG: RHEL-07-010431 - The operating system must not allow guest logon to the system.
+# description: Failure to restrict system access to authenticated users negatively impacts operating system security.
+# severity: 'high'
+# checkid: 'C-RHEL-07-010431_chk'
+# fixid: 'F-RHEL-07-010431_fix'
+# version: 'RHEL-07-010431'
+# ruleid: 'RHEL-07-010431_rule'
+# fixtext: 'Configure the operating system to not allow a guest account to log on to the system via a graphical user interface.
+#
+#Note: If the system does not have GNOME installed, this requirement is Not Applicable.
+#
+#Add or edit the line for the “TimedLoginEnable” parameter in the [daemon] section of the “/etc/gdm/custom.conf” file to “false”:
+#
+#[daemon]
+#TimedLoginEnable=false'
+# checktext: 'Verify the operating system does not allow guest logon to the system via a graphical user interface.
+#
+#Note: If the system does not have GNOME installed, this requirement is Not Applicable. 
+#
+#Check for the value of the “AutomaticLoginEnable” in “/etc/gdm/custom.conf” file with the following command:
+#
+## grep -i timedloginenable /etc/gdm/custom.conf
+#TimedLoginEnable=false
+#
+#If the value of “TimedLoginEnable” is not set to “false”, this is a finding.'
+
+- debug: msg="rhel_07_010431 not implemented"
+

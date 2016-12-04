@@ -1,0 +1,22 @@
+---
+# STIG: RHEL-07-021260 - The system must use /var/log/audit for the system audit data path.
+# description: The use of separate file systems for different paths can protect the system from failures resulting from a file system becoming full or failing.
+# severity: 'low'
+# checkid: 'C-RHEL-07-021260_chk'
+# fixid: 'F-RHEL-07-021260_fix'
+# version: 'RHEL-07-021260'
+# ruleid: 'RHEL-07-021260_rule'
+# fixtext: 'Migrate the system audit data path onto a separate file system.'
+# checktext: 'Verify that a separate file system/partition has been created for the system audit data path.
+#
+#Check that a file system/partition has been created for the system audit data path with the following command:
+#
+##grep /var/log/audit /etc/fstab
+#UUID=3645951a    /var/log/audit          ext4    defaults                 1 2
+#
+#If a separate entry for /var/log/audit does not exist, ask the System Administrator (SA) if the system audit logs are being written to a different file system/partition on the system, then grep for that file system/partition. 
+#
+#If a separate file system/partition does not exist for the system audit data path, this is a finding.'
+
+- debug: msg="rhel_07_021260 not implemented"
+

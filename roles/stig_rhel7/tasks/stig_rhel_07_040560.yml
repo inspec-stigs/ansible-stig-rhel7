@@ -1,0 +1,25 @@
+---
+# STIG: RHEL-07-040560 - An X Windows display manager must not be installed unless approved.
+# description: Internet services that are not required for system or application processes must not be active to decrease the attack surface of the system. X Windows has a long history of security vulnerabilities and will not be used unless approved and documented.
+# severity: 'medium'
+# checkid: 'C-RHEL-07-040560_chk'
+# fixid: 'F-RHEL-07-040560_fix'
+# version: 'RHEL-07-040560'
+# ruleid: 'RHEL-07-040560_rule'
+# fixtext: 'Document the requirement for an X Windows server with the ISSM or remove the related packages with the following commands:
+#
+##yum groupremove "X Window System"
+#
+##yum remove xorg-x11-server-common'
+# checktext: 'Verify that if the system has X Windows installed, it is authorized.
+#
+#Check for the X11 package with the following command:
+#
+##yum groupinstall "X Window System"
+#
+#Ask the System Administrator (SA) if use of the X Windows system is an operational requirement.
+#
+#If the use of X Windows on the system is not documented with the Information System Security Manager (ISSM), this is a finding.'
+
+- debug: msg="rhel_07_040560 not implemented"
+

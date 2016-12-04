@@ -1,0 +1,23 @@
+---
+# STIG: RHEL-07-040590 - The SSH daemon must be configured to only use the SSHv2 protocol.
+# description: SSHv1 is an insecure implementation of the SSH protocol and has many well-known vulnerability exploits. Exploits of the SSH daemon could provide immediate root access to the system.  Satisfies: SRG-OS-000074-GPOS-00042, SRG-OS-000480-GPOS-00227
+# severity: 'high'
+# checkid: 'C-RHEL-07-040590_chk'
+# fixid: 'F-RHEL-07-040590_fix'
+# version: 'RHEL-07-040590'
+# ruleid: 'RHEL-07-040590_rule'
+# fixtext: 'Remove all Protocol lines that reference version 1 in /etc/ssh/sshd_config (this file may be named differently or be in a different location if using a version of SSH that is provided by a third-party vendor). The "Protocol" line must be as follows:
+#
+#Protocol 2'
+# checktext: 'Verify the SSH daemon is configured to only use the SSHv2 protocol.
+#
+#Check that the SSH daemon is configured to only use the SSHv2 protocol with the following command:
+#
+## grep -i protocol /etc/ssh/sshd_config
+#Protocol 2
+##Protocol 1,2
+#
+#If any protocol line other than "Protocol 2" is uncommented, this is a finding.'
+
+- debug: msg="rhel_07_040590 not implemented"
+

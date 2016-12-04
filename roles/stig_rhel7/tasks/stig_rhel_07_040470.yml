@@ -1,0 +1,23 @@
+---
+# STIG: RHEL-07-040470 - Network interfaces must not be in promiscuous mode.
+# description: Network interfaces in promiscuous mode allow for the capture of all network traffic visible to the system. If unauthorized individuals can access these applications, it may allow then to collect information such as logon IDs, passwords, and key exchanges between systems.  If the system is being used to perform a network troubleshooting function, the use of these tools must be documented with the Information System Security Manager (ISSM) and restricted to only authorized personnel.
+# severity: 'medium'
+# checkid: 'C-RHEL-07-040470_chk'
+# fixid: 'F-RHEL-07-040470_fix'
+# version: 'RHEL-07-040470'
+# ruleid: 'RHEL-07-040470_rule'
+# fixtext: 'Configure network interfaces to turn off promiscuous mode unless approved by the ISSM and documented.
+#
+#Set the promiscuous mode of an interface to off with the following command:
+#
+##ip link set dev <devicename> multicast off promisc off'
+# checktext: 'Verify network interfaces are not in promiscuous mode unless approved by the Information System Security Manager (ISSM) and documented.
+#
+#Check for the status with the following command:
+#
+## ip link | grep -i promisc
+#
+#If network interfaces are found on the system in promiscuous mode and their use has not been approved by the ISSM and documented, this is a finding.'
+
+- debug: msg="rhel_07_040470 not implemented"
+

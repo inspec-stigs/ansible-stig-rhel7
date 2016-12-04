@@ -1,0 +1,22 @@
+---
+# STIG: RHEL-07-020240 - The operating system must be a supported release.
+# description: An operating system release is considered "supported" if the vendor continues to provide security patches for the product. With an unsupported release, it will not be possible to resolve security issues discovered in the system software.
+# severity: 'high'
+# checkid: 'C-RHEL-07-020240_chk'
+# fixid: 'F-RHEL-07-020240_fix'
+# version: 'RHEL-07-020240'
+# ruleid: 'RHEL-07-020240_rule'
+# fixtext: 'Upgrade to a supported version of the operating system.'
+# checktext: 'Severity Override Guidance: 
+#
+#Check the version of the operating system with the following command:
+#
+## cat /etc/redhat-release
+#
+#Red Hat Enterprise Linux Server release 7.2 (Maipo)
+#Current End of Life for RHEL 7 is June 30, 2024.
+#
+#If the release is not supported by the vendor, this is a finding.'
+
+- debug: msg="rhel_07_020240 not implemented"
+

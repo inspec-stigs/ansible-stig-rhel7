@@ -1,0 +1,20 @@
+---
+# STIG: RHEL-07-021270 - The system must use a separate file system for /tmp (or equivalent).
+# description: The use of separate file systems for different paths can protect the system from failures resulting from a file system becoming full or failing.
+# severity: 'low'
+# checkid: 'C-RHEL-07-021270_chk'
+# fixid: 'F-RHEL-07-021270_fix'
+# version: 'RHEL-07-021270'
+# ruleid: 'RHEL-07-021270_rule'
+# fixtext: 'Migrate the /tmp path onto a separate file system.'
+# checktext: 'Verify that a separate file system/partition has been created for /tmp.
+#
+#Check that a file system/partition has been created for “/tmp” with the following command:
+#
+## grep /tmp /etc/fstab
+#UUID=7835718b    /tmp    ext4    nodev,nosetuid,noexec      1 2
+#
+#If a separate entry for /tmp is not in use, this is a finding.'
+
+- debug: msg="rhel_07_021270 not implemented"
+

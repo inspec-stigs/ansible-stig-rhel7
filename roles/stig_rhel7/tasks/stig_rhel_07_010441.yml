@@ -1,0 +1,24 @@
+---
+# STIG: RHEL-07-010441 - The operating system must not allow users to override SSH environment variables.
+# description: Failure to restrict system access to authenticated users negatively impacts operating system security.
+# severity: 'medium'
+# checkid: 'C-RHEL-07-010441_chk'
+# fixid: 'F-RHEL-07-010441_fix'
+# version: 'RHEL-07-010441'
+# ruleid: 'RHEL-07-010441_rule'
+# fixtext: 'Configure the operating system to not allow users to override environment variables to the SSH daemon.
+#
+#Edit the /etc/ssh/sshd_config file to uncomment or add the line for “PermitUserEnvironment” keyword and set the value to “no”:
+#
+#PermitUserEnvironment no'
+# checktext: 'Verify the operating system does not allow users to override environment variables to the SSH daemon.
+#
+#Check for the value of the PermitUserEnvironment keyword with the following command:
+#
+## grep -i permituserenvironment /etc/ssh/sshd_config
+#PermitUserEnvironment no
+#
+#If the “PermitUserEnvironment” keyword is not set to “no”, is missing, or is commented out, this is a finding.'
+
+- debug: msg="rhel_07_010441 not implemented"
+

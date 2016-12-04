@@ -1,0 +1,22 @@
+---
+# STIG: RHEL-07-021200 - If the cron.allow file exists it must be group-owned by root.
+# description: If the group owner of the “cron.allow” file is not set to root, sensitive information could be viewed or edited by unauthorized users.
+# severity: 'medium'
+# checkid: 'C-RHEL-07-021200_chk'
+# fixid: 'F-RHEL-07-021200_fix'
+# version: 'RHEL-07-021200'
+# ruleid: 'RHEL-07-021200_rule'
+# fixtext: 'Set the group owner on the “/etc/cron.allow” file to root with the following command:
+#
+## chgrp root /etc/cron.allow'
+# checktext: 'Verify that the “cron.allow” file is group-owned by root.
+#
+#Check the group owner of the “cron.allow” file with the following command:
+#
+## ls -al /etc/cron.allow
+#-rw------- 1 root root 6 Mar  5  2011 /etc/cron.allow
+#
+#If the “cron.allow” file exists and has a group owner other than root, this is a finding.'
+
+- debug: msg="rhel_07_021200 not implemented"
+

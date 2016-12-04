@@ -1,0 +1,28 @@
+---
+# STIG: RHEL-07-020161 - File system automounter must be disabled unless required.
+# description: Automatically mounting file systems permits easy introduction of unknown devices, thereby facilitating malicious activity.  Satisfies: SRG-OS-000114-GPOS-00059, SRG-OS-000378-GPOS-00163, SRG-OS-000480-GPOS-00227
+# severity: 'medium'
+# checkid: 'C-RHEL-07-020161_chk'
+# fixid: 'F-RHEL-07-020161_fix'
+# version: 'RHEL-07-020161'
+# ruleid: 'RHEL-07-020161_rule'
+# fixtext: 'Configure the operating system to disable the ability to automount devices.
+#
+#Turn off the automount service with the following command:
+#
+## systemctl disable autofs
+#
+#If “autofs” is required for Network File System (NFS), it must be documented with the ISSO.'
+# checktext: 'Verify the operating system disables the ability to automount devices.
+#
+#Check to see if automounter service is active with the following command:
+#
+## systemctl status autofs
+#autofs.service - Automounts filesystems on demand
+#   Loaded: loaded (/usr/lib/systemd/system/autofs.service; disabled)
+#   Active: inactive (dead)
+#
+#If the “autofs” status is set to “active” and is not documented with the Information System Security Officer (ISSO) as an operational requirement, this is a finding.'
+
+- debug: msg="rhel_07_020161 not implemented"
+

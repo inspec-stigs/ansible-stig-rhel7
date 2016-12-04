@@ -1,0 +1,21 @@
+---
+# STIG: RHEL-07-020010 - The ypserv package must not be installed.
+# description: Removing the "ypserv" package decreases the risk of the accidental (or intentional) activation of NIS or NIS+ services.
+# severity: 'high'
+# checkid: 'C-RHEL-07-020010_chk'
+# fixid: 'F-RHEL-07-020010_fix'
+# version: 'RHEL-07-020010'
+# ruleid: 'RHEL-07-020010_rule'
+# fixtext: 'Configure the operating system to disable non-essential capabilities by removing the “ypserv” package from the system with the following command:
+#
+## yum remove ypserv'
+# checktext: 'The NIS service provides an unencrypted authentication service that does not provide for the confidentiality and integrity of user passwords or the remote session.
+#
+#Check to see if the “ypserve” package is installed with the following command:
+#
+## yum list installed | grep ypserv
+#
+#If the “ypserv” package is installed, this is a finding.'
+
+- debug: msg="rhel_07_020010 not implemented"
+

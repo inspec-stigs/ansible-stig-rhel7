@@ -1,0 +1,26 @@
+---
+# STIG: RHEL-07-040490 - A File Transfer Protocol (FTP) server package must not be installed unless needed.
+# description: The FTP service provides an unencrypted remote access that does not provide for the confidentiality and integrity of user passwords or the remote session. If a privileged user were to log on using this service, the privileged user password could be compromised. SSH or other encrypted file transfer methods must be used in place of this service.
+# severity: 'high'
+# checkid: 'C-RHEL-07-040490_chk'
+# fixid: 'F-RHEL-07-040490_fix'
+# version: 'RHEL-07-040490'
+# ruleid: 'RHEL-07-040490_rule'
+# fixtext: 'Document the "lftpd" package with the ISSO as an operational requirement or remove it from the system with the following command:
+#
+## yum remove lftpd'
+# checktext: 'Verify a lightweight FTP server has not been installed on the system.
+#
+#Check to see if a lightweight FTP server has been installed with the following commands:
+#
+## yum list installed | grep lftpd
+# lftp-4.4.8-7.el7.x86_64.rpm
+#
+#An alternate method of determining if a lightweight FTP server is active on the server is to use the following command:
+#
+## netstat -a | grep 21
+#
+#If “lftpd” is installed, or if an application is listening on port 21, and is not documented with the Information System Security Officer (ISSO) as an operational requirement, this is a finding.'
+
+- debug: msg="rhel_07_040490 not implemented"
+

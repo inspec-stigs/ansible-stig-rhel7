@@ -1,0 +1,20 @@
+---
+# STIG: RHEL-07-021250 - The system must use a separate file system for /var.
+# description: The use of separate file systems for different paths can protect the system from failures resulting from a file system becoming full or failing.
+# severity: 'low'
+# checkid: 'C-RHEL-07-021250_chk'
+# fixid: 'F-RHEL-07-021250_fix'
+# version: 'RHEL-07-021250'
+# ruleid: 'RHEL-07-021250_rule'
+# fixtext: 'Migrate the /var path onto a separate file system.'
+# checktext: 'Verify that a separate file system/partition has been created for /var.
+#
+#Check that a file system/partition has been created for /var with the following command:
+#
+## grep /var /etc/fstab
+#UUID=c274f65f    /var                    ext4    noatime,nobarrier        1 2
+#
+#If a separate entry for /var is not in use, this is a finding.'
+
+- debug: msg="rhel_07_021250 not implemented"
+
